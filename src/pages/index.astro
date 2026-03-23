@@ -22,10 +22,11 @@ const sorted = allArticles.sort(
     b.data.date.valueOf() - a.data.date.valueOf()
 );
 
+const base = import.meta.env.BASE_URL;
 const toCard = (a: CollectionEntry<'articles'>): CardProps => ({
   ...a.data,
   date: formatDate(a.data.date),
-  href: `/articles/${a.id}`,
+  href: `${base}articles/${a.id}`,
 });
 
 const featuredEntry = sorted.find((a: CollectionEntry<'articles'>) => a.data.featured) ?? sorted[0];
@@ -86,7 +87,7 @@ const popular: CardProps[] = popularEntries.map(toCard);
       </aside>
     </div>
     <div class="all-articles-link">
-      <a href="/articles" class="all-articles-btn">All Articles →</a>
+      <a href={`${base}articles`} class="all-articles-btn">All Articles →</a>
     </div>
   </section>
 </BaseLayout>
