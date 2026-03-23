@@ -1,0 +1,29 @@
+---
+import ArticleCard from './ArticleCard.astro';
+
+interface ArticleProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt?: string;
+  readTime: number;
+  date: string;
+  href: string;
+}
+
+interface Props {
+  articles: ArticleProps[];
+  heading: string;
+}
+
+const { articles, heading } = Astro.props;
+---
+
+<section class="article-grid-section">
+  <h2 class="grid-heading">{heading}</h2>
+  <div class="articles-archive">
+    {articles.map((article) => (
+      <ArticleCard {...article} featured={false} />
+    ))}
+  </div>
+</section>

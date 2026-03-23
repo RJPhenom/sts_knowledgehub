@@ -1,0 +1,92 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import ArticleListItem from '../components/ArticleListItem.astro';
+import { formatDate } from '../utils/formatDate';
+
+interface CardProps {
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt?: string;
+  readTime: number;
+  date: string;
+  href: string;
+  featured?: boolean;
+}
+
+const allArticles = await getCollection('articles');
+const sorted = allArticles.sort(
+  (a: CollectionEntry<'articles'>, b: CollectionEntry<'articles'>) =>
+    b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const toCard = (a: CollectionEntry<'articles'>): CardProps => ({
+  ...a.data,
+  date: formatDate(a.data.date),
+  href: `/articles/${a.id}`,
+});
+
+const featuredEntry = sorted.find((a: CollectionEntry<'articles'>) => a.data.featured) ?? sorted[0];
+const rest = sorted.filter((a: CollectionEntry<'articles'>) => a.id !== featuredEntry.id);
+const recentEntries = rest.slice(0, 2);
+const gridEntries = rest.slice(2);
+const popularEntries = sorted.filter((a: CollectionEntry<'articles'>) => a.data.popular).slice(0, 6);
+
+const featured: CardProps = toCard(featuredEntry);
+const recent: CardProps[] = recentEntries.map(toCard);
+const gridAbove: CardProps[] = gridEntries.slice(0, 4).map(toCard);
+const gridBelow: CardProps[] = gridEntries.slice(4, 8).map(toCard);
+const popular: CardProps[] = popularEntries.map(toCard);
+---
+
+<BaseLayout title="Home">
+  <section class="article-grid-section">
+    <h2 class="grid-heading">Featured</h2>
+  </section>
+  <section class="hero-feed">
+    <ArticleCard {...featured} featured={true} />
+    <div class="side-cards">
+      {recent.map((article: CardProps) => (
+        <ArticleCard {...article} />
+      ))}
+    </div>
+  </section>
+
+  <section class="article-grid-section">
+    <h2 class="grid-heading">More Articles</h2>
+    <div class="news-layout">
+      <div class="news-list">
+        {gridAbove.map((article: CardProps) => (
+          <ArticleListItem {...article} />
+        ))}
+        <div class="newsletter-bisector">
+          <p class="newsletter-label">Newsletter</p>
+          <h3 class="newsletter-heading">Stay in the loop.</h3>
+          <p class="newsletter-subtext">The latest on AI, automation, and enterprise tech — delivered weekly.</p>
+          <form class="newsletter-form" action="#" method="post">
+            <input type="email" name="email" placeholder="your@email.com" class="newsletter-input" />
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+        {gridBelow.map((article: CardProps) => (
+          <ArticleListItem {...article} />
+        ))}
+      </div>
+      <aside class="news-sidebar">
+        <div class="popular-panel">
+          <h3 class="popular-heading">Most Popular</h3>
+          <div class="popular-list">
+            {popular.map((article: CardProps, i: number) => (
+              <ArticleListItem {...article} category={`#${i + 1}`} />
+            ))}
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="all-articles-link">
+      <a href="/articles" class="all-articles-btn">All Articles →</a>
+    </div>
+  </section>
+</BaseLayout>

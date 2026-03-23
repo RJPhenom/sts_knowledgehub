@@ -1,0 +1,31 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  imageAlt?: string;
+  readTime: number;
+  date: string;
+  href: string;
+  featured?: boolean;
+}
+
+const { title, subtitle, image, imageAlt, readTime, date, href, featured = false } = Astro.props;
+---
+
+<a href={href} class:list={['article-card', { featured }]}>
+  {image && (
+    <div class="card-image">
+      <img src={image} alt={imageAlt ?? title} />
+    </div>
+  )}
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    {subtitle && <p class="card-subtitle">{subtitle}</p>}
+    <div class="card-meta">
+      <span class="read-dot"></span>
+      <span class="read-time">{readTime} min</span>
+      <span class="read-date">{date}</span>
+    </div>
+  </div>
+</a>

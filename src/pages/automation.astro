@@ -1,0 +1,24 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleArchive from '../components/ArticleArchive.astro';
+import { formatDate } from '../utils/formatDate';
+
+const allArticles = await getCollection('articles');
+const sorted = allArticles
+  .filter((a: CollectionEntry<'articles'>) => a.data.category === 'automation')
+  .sort(
+    (a: CollectionEntry<'articles'>, b: CollectionEntry<'articles'>) =>
+      b.data.date.valueOf() - a.data.date.valueOf()
+  );
+
+const articles = sorted.map((a: CollectionEntry<'articles'>) => ({
+  ...a.data,
+  date: formatDate(a.data.date),
+  href: `/articles/${a.id}`,
+}));
+---
+
+<BaseLayout title="Automation">
+  <ArticleArchive articles={articles} heading="Automation" />
+</BaseLayout>

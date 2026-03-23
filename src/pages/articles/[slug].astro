@@ -1,0 +1,190 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../utils/formatDate';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const { title, subtitle, image, imageAlt, readTime, date, category } = article.data;
+
+const categoryLabels: Record<string, string> = {
+  automation: 'Automation',
+  'ai-news': 'AI News',
+  analytics: 'Analytics',
+};
+---
+
+<BaseLayout title={title}>
+  <article class="article-page">
+    <header class="article-header">
+      <div class="article-meta-top">
+        <a href={`/${category}`} class="article-category">{categoryLabels[category]}</a>
+        <span class="article-meta-sep">·</span>
+        <span class="article-read-time">{readTime} min read</span>
+        <span class="article-meta-sep">·</span>
+        <time>{formatDate(date)}</time>
+      </div>
+      <h1 class="article-title">{title}</h1>
+      {subtitle && <p class="article-subtitle">{subtitle}</p>}
+    </header>
+
+    <div class="article-hero">
+      <img src={image} alt={imageAlt ?? title} />
+    </div>
+
+    <div class="article-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-page {
+    max-width: 920px;
+    margin-inline: auto;
+    padding-bottom: 4rem;
+  }
+
+  .article-header {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .article-meta-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .article-category {
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+
+  .article-category:hover {
+    color: var(--text);
+  }
+
+  .article-meta-sep {
+    color: var(--border);
+  }
+
+  .article-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+  }
+
+  .article-subtitle {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  .article-hero {
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+
+  .article-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .article-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+  }
+
+  .article-body :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body :global(h2) {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .article-body :global(h3) {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .article-body :global(ul),
+  .article-body :global(ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-body :global(strong) {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 3px solid var(--border);
+    padding-left: 1.25rem;
+    margin-left: 0;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .article-body :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-block: 2rem;
+  }
+
+  .article-body :global(code) {
+    font-family: monospace;
+    font-size: 0.9em;
+    background: var(--bg-card);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+  }
+
+  .article-body :global(pre) {
+    background: var(--bg-card);
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+</style>
