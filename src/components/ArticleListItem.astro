@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { title, subtitle, image, imageAlt, readTime, date, href, category } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <a href={href} class="article-list-item">

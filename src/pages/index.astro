@@ -22,7 +22,7 @@ const sorted = allArticles.sort(
     b.data.date.valueOf() - a.data.date.valueOf()
 );
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const toCard = (a: CollectionEntry<'articles'>): CardProps => ({
   ...a.data,
   date: formatDate(a.data.date),
