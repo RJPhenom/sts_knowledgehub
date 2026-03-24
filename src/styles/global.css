@@ -820,7 +820,7 @@ a:hover {
 .cta-strip {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding-block: 3rem;
+  padding-block: 5rem;
   margin-top: 4rem;
 }
 
@@ -828,31 +828,47 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 .cta-strip-text {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  max-width: 600px;
 }
 
 .cta-strip-heading {
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
   font-weight: 700;
   color: var(--text);
 }
 
 .cta-strip-body {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   line-height: 1.6;
 }
 
+.cta-strip .sts-link-btn {
+  flex-shrink: 0;
+  padding: 2rem 2rem;
+  font-size: 2rem !important;
+  gap: 1rem;
+}
+
+.cta-strip .sts-btn-logo {
+  height: 4rem;
+}
+
+.cta-strip .sts-btn-label {
+  font-size: 2rem;
+}
+
 .site-footer {
-  margin-top: 4rem;
-  border-top: 1px solid var(--border);
+  margin-top: 0;
+  border-top: none;
   padding-block: 2rem;
 }
 
