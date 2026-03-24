@@ -17,28 +17,34 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <title>{title} — The Knowledge Hub</title>
   </head>
   <body>
+    <div class="scroll-sentinel"></div>
     <header class="site-header">
       <div class="container header-inner">
         <a href={base} class="brand">
-          <h1 class="site-title">The<br />Knowledge<br />Hub</h1>
+          <h1 class="site-title">
+            <span class="title-full">The<br />Knowledge<br />Hub</span>
+            <span class="title-short">TKH</span>
+          </h1>
           <div class="brand-byline">
             <span class="by-text">By</span>
             <img src={`${base}sts_logo.svg`} alt="Semantic Technology Services" class="sts-logo" />
           </div>
         </a>
 
+        <button class="burger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
         <nav class="site-nav">
-          <div class="nav-group">
-            <a href={`${base}about`}>About</a>
-          </div>
-          <div class="nav-group">
-            <a href={`${base}automation`}>Automation</a>
-            <a href={`${base}ai-news`}>AI News</a>
-            <a href={`${base}analytics`}>Analytics</a>
-          </div>
-          <div class="nav-group">
-            <a href={`${base}contact`}>Contact</a>
-          </div>
+          <a href={`${base}automation`} class="nav-topic">Automation</a>
+          <a href={`${base}ai-news`} class="nav-topic">AI News</a>
+          <a href={`${base}analytics`} class="nav-topic">Analytics</a>
+          <span class="nav-sep">|</span>
+          <a href={`${base}about`}>About</a>
+          <a href={`${base}contact`}>Contact</a>
+          <a href="https://www.semantictechnologyservices.com" class="sts-link-btn" target="_blank" rel="noopener">
+            <span class="sts-btn-label">Visit</span><img src={`${base}sts_logo_black.svg`} alt="Semantic Technology Services" class="sts-btn-logo" /> →
+          </a>
         </nav>
       </div>
     </header>
@@ -48,6 +54,18 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <slot />
       </div>
     </main>
+
+    <section class="cta-strip">
+      <div class="container cta-strip-inner">
+        <div class="cta-strip-text">
+          <h2 class="cta-strip-heading">Looking for help with AI?</h2>
+          <p class="cta-strip-body">Get in touch with one of our experts to help you stay ahead of the game in the world of AI Automation, Analytics and Acceleration.</p>
+        </div>
+        <a href="https://www.semantictechnologyservices.com" class="sts-link-btn" target="_blank" rel="noopener">
+          <span class="sts-btn-label">Visit</span><img src={`${base}sts_logo_black.svg`} alt="Semantic Technology Services" class="sts-btn-logo" /> →
+        </a>
+      </div>
+    </section>
 
     <footer class="site-footer">
       <div class="container footer-inner">
@@ -63,4 +81,29 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </div>
     </footer>
   </body>
+  <script>
+    const header = document.querySelector('.site-header');
+    const sentinel = document.querySelector('.scroll-sentinel');
+    if (header && sentinel) {
+      new IntersectionObserver(
+        ([entry]) => header.classList.toggle('scrolled', !entry.isIntersecting),
+        { threshold: 0 }
+      ).observe(sentinel);
+    }
+
+    const burger = document.querySelector('.burger-btn');
+    const nav = document.querySelector('.site-nav');
+    if (burger && nav) {
+      burger.addEventListener('click', () => {
+        const open = header?.classList.toggle('menu-open');
+        burger.setAttribute('aria-expanded', String(open));
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          header?.classList.remove('menu-open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  </script>
 </html>
