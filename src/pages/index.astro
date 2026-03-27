@@ -66,8 +66,8 @@ const popular: CardProps[] = popularEntries.map(toCard);
           <p class="newsletter-label">Newsletter</p>
           <h3 class="newsletter-heading">Stay in the loop.</h3>
           <p class="newsletter-subtext">The latest on AI, automation, and enterprise tech — delivered weekly.</p>
-          <form class="newsletter-form" action="#" method="post">
-            <input type="email" name="email" placeholder="your@email.com" class="newsletter-input" />
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" name="email" placeholder="your@email.com" class="newsletter-input" required />
             <button type="submit" class="newsletter-btn">Subscribe</button>
           </form>
         </div>
@@ -90,4 +90,93 @@ const popular: CardProps[] = popularEntries.map(toCard);
       <a href={`${base}articles`} class="all-articles-btn">All Articles →</a>
     </div>
   </section>
+
+<div id="toast" aria-live="polite"></div>
+
+<style>
+  #toast {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(2rem);
+    background: #1c1c1c;
+    color: #fff;
+    padding: 1.1rem 2rem;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    min-width: 320px;
+    max-width: 90vw;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255,255,255,0.08);
+    border: 1px solid #333;
+  }
+  #toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+  .toast-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  #toast.toast--success .toast-icon { color: #22c55e; }
+  #toast.toast--error   .toast-icon { color: #ef4444; }
+</style>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const toast = document.getElementById('toast') as HTMLDivElement;
+
+  const ICONS = {
+    success: `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>`,
+    error:   `<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>`,
+  };
+
+  let toastTimer: ReturnType<typeof setTimeout>;
+
+  function showToast(message: string, type: 'success' | 'error' = 'success') {
+    clearTimeout(toastTimer);
+    toast.innerHTML = `<span class="toast-icon">${ICONS[type]}</span><span>${message}</span>`;
+    toast.className = `show toast--${type}`;
+    toastTimer = setTimeout(() => { toast.className = ''; }, 4500);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const body = new URLSearchParams({ email });
+
+    try {
+      const res = await fetch('https://buttondown.com/api/emails/embed-subscribe/STS', {
+        method: 'POST',
+        body,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      });
+
+      if (res.ok || res.status === 400) {
+        // 400 often means "already subscribed" — still a non-fatal outcome
+        const text = await res.text();
+        if (text.includes('already subscribed') || res.status === 400) {
+          showToast('You\'re already subscribed!', 'success');
+        } else {
+          showToast('Thanks! Check your inbox to confirm.', 'success');
+          form.reset();
+        }
+      } else {
+        showToast('Something went wrong. Please try again.', 'error');
+      }
+    } catch {
+      showToast('Something went wrong. Please try again.', 'error');
+    }
+  });
+</script>
 </BaseLayout>
