@@ -15,6 +15,9 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} — The Knowledge Hub</title>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "07bf9bdd99a8445a806a14b14f566b20"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </head>
   <body>
     <div class="scroll-sentinel"></div>
