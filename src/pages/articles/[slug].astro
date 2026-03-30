@@ -48,7 +48,7 @@ const categoryLabels: Record<string, string> = {
     <div class="article-author">
       <img src={`${base}favicon.svg`} alt="The Knowledge Hub" class="author-icon" />
       <div class="author-text">
-        <span class="author-name"><span class="author-label">Author: </span>TKH Team</span>
+        <span class="author-name">TKH Team</span>
         <span class="author-org">Semantic Technology Services</span>
       </div>
     </div>
@@ -137,6 +137,8 @@ const categoryLabels: Record<string, string> = {
     letter-spacing: -0.01em;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
   }
 
   .article-body :global(h3) {
@@ -219,7 +221,7 @@ const categoryLabels: Record<string, string> = {
   }
 
   .author-name {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text);
   }
@@ -229,7 +231,7 @@ const categoryLabels: Record<string, string> = {
   }
 
   .author-org {
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
   }
 </style>

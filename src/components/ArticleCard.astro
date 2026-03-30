@@ -21,8 +21,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     </div>
   )}
   <div class="card-body">
-    <h2 class="card-title">{title}</h2>
-    {subtitle && <p class="card-subtitle">{subtitle}</p>}
+    <h2 class="card-title"><span>{title}</span></h2>
+    {subtitle && <p class="card-subtitle"><span>{subtitle}</span></p>}
     <div class="card-meta">
       <span class="read-dot"></span>
       <span class="read-time">{readTime} min</span>
