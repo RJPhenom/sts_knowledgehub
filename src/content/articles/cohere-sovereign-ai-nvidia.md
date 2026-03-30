@@ -33,6 +33,6 @@ On-premise deployment is not a workaround. For a significant class of workloads 
 
 ## The Canadian Angle
 
-Cohere was founded in Toronto and continues to be one of Canada's most prominent AI companies. They have been at the center of Canada's AI sector, which has been of national focus lately. Canada, and Toronto in particular, is home of many of the worlds top AI researchers and academics. Cohere's North platform and this NVIDIA partnership extend a story the company has been building for years: enterprise AI that does not require handing your data to a third-party cloud.
+Cohere was founded in Toronto and continues to be one of Canada's most prominent AI companies. They have been at the center of Canada's AI sector, which has been of national focus lately. Canada, and Toronto in particular, has been home to many of the worlds top AI researchers and academics. Cohere's North platform and this NVIDIA partnership extend a story the company has been building for years: enterprise AI that does not require handing your data to a third-party cloud.
 
 Cohere describes the approach as treating "security as a strategic necessity." For the sectors they are targeting, that framing is not marketing copy. It is the condition of entry.

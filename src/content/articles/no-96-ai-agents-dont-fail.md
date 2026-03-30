@@ -9,7 +9,7 @@ category: ai-news
 popular: true
 ---
 
-There is just as much AI doom out there as there is AI hype. But when you read "[96% of AI Agents Fail](https://youtu.be/z3kaLM8Oj4o?si=aasW6Q5OZcapoO2n)" it can be hard to ignore the clickbait, especially when its backed by an actual study. So what gives?
+There is just as much AI doom out there as there is AI hype. But when you read "[96% of AI Agents Fail](https://youtu.be/z3kaLM8Oj4o?si=aasW6Q5OZcapoO2n)" it can be hard to ignore the clickbait, especially when it's backed by an actual study. So what gives?
 
 While the viral headline from [Coldfusion](https://www.youtube.com/coldfusion) has definitely made the rounds, the [underlying study](https://worldfinancialreview.com/ai-agents-fail-96-of-the-time-but-enterprise-ai-workflows-change-that/) only really speaks to a general kind of anxiety about AGI, and our (allegedly) impending replacement.
 
@@ -19,13 +19,13 @@ But of course, in large [enterprise environments](https://semantictechnologyserv
 
 They are not dropped into a blank workspace with a brief and expected to produce something client-ready on their own. That framing assumes a kind of independence that does not really exist in enterprise operations, whether you are talking about humans or machines. Most meaningful work inside an organization is not a single continuous task. It is a chain of smaller steps, each with its own constraints, expectations, and checks.
 
-Even in teams that move quickly, there is structure everywhere once you look closely. Data is stored and categorized (even if in messy Excel sheets) and processes are driven by SOPs and workflow diagramms, even if they eventually go off the rails. The difference between traditional RPA and AI agents is they can keep working even when the latter occurs. There are templates, internal standards, and quiet assumptions that provide a general guideline on a workflow, with blurry lines around the edges.
+Even in teams that move quickly, there is structure everywhere once you look closely. Data is stored and categorized (even if in messy Excel sheets) and processes are driven by SOPs and workflow diagrams, even if they eventually go off the rails. The difference between traditional RPA and AI agents is they can keep working even when the latter occurs. There are templates, internal standards, and quiet assumptions that provide a general guideline on a workflow, with blurry lines around the edges.
 
 These are the kind of environments AI agents are being introduced into.
 
 So when an agent is evaluated as if it were a standalone operator, the result says more about the test than the technology. The failure modes reported in the study are not particularly surprising in that context. Missing files, partial adherence to instructions, inconsistencies across deliverables, lack of polish. These are all things that tend to surface when complex work is handled in a single pass without intermediate validation. The kind of hiccups freelancers struggle with across clients on a daily basis. If anything, they mirror what happens when a human is asked to do the same.
 
-Where things start to diverge is when AI is placed inside a system that is designed to fulfill a role in a closed system. Then it can deal with those kinds of imperfections, using the gaurdrails built around it. Instead of asking a model to complete an entire project, the work is decomposed. Now one agent extracts information. Another formats it. Another checks it against a schema or a set of rules. At certain points, a human reviews what has been produced, not from scratch, but as part of an already structured flow.
+Where things start to diverge is when AI is placed inside a system that is designed to fulfill a role in a closed system. Then it can deal with those kinds of imperfections, using the guardrails built around it. Instead of asking a model to complete an entire project, the work is decomposed. Now one agent extracts information. Another formats it. Another checks it against a schema or a set of rules. At certain points, a human reviews what has been produced, not from scratch, but as part of an already structured flow.
 
 That difference in setup changes outcomes quite a bit.
 

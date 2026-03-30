@@ -15,7 +15,7 @@ Is this science fiction?
 - A hospital system flags a cardiac patient as likely to be readmitted within 30 days before they even leave the building.
 - A cancer clinical trial that cannot recruit enough patients is supplemented with synthetic participants, statistically indistinguishable from real ones.
 
-None of these are hypothetical. All of these breakthroughs are currently underway in Canadian and American hospitals, and in peer-reviewed research published within the last eighteen months. Predictive analytics in the healthsystem has always been aspirational, until now. Now its being used with success, and the world of predictive and preventative medicine is being blown open.
+None of these are hypothetical. All of these breakthroughs are currently underway in Canadian and American hospitals, and in peer-reviewed research published within the last eighteen months. Predictive analytics in the health system has always been aspirational, until now. Now it's being used with success, and the world of predictive and preventative medicine is being blown open.
 
 ## What is Predictive Analytics in Health?
 
@@ -81,6 +81,6 @@ Publication volume in predictive healthcare ML has grown sharply since 2021, wit
 
 The near-term trajectory seems to be around AI identifying who needs clinical attention before anyone thought to look. As rollouts grow in strength and become more and more successful, operational forecasting gets better and better scale. The result is population-based screening that can surface risk patterns no individual clinician could synthesize from records in hand or by scrolling an EHR.
 
-The infrastructure that makes this work involves clean data pipelines, privacy-preserving techniques like synthetic data generation, clinician-in-the-loop design, prospective validation across diverse patient populations is being built right now. Some of it in university labs attached to children's hospitals in Ottawa. Some of it already running in production at large health systems across North America.
+The infrastructure that makes this work is being built right now: clean data pipelines, privacy-preserving techniques like synthetic data generation, clinician-in-the-loop design, and prospective validation across diverse patient populations. Some of it in university labs attached to children's hospitals in Ottawa. Some of it already running in production at large health systems across North America.
 
 The organizations building deliberate competency in this area are establishing a structural advantage in how they allocate resources, prioritize care, and prevent crises.

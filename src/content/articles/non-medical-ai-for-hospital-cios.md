@@ -21,9 +21,9 @@ _What has the greatest impact at the lowest risk?_
 
 ## The Reality: Where Non-Medical AI Actually Shows Up
 
-When people hear “AI in healthcare,” they tend to think [scribes, imaging, or diagnostics and treatment recommendations](https://www.cma.ca/healthcare-for-real/how-are-doctors-using-ai). But a most of the real-world AI deployments that exist in hospitals today sit outside of medical decision-making entirely.
+When people hear “AI in healthcare,” they tend to think [scribes, imaging, or diagnostics and treatment recommendations](https://www.cma.ca/healthcare-for-real/how-are-doctors-using-ai). But most of the real-world AI deployments that exist in hospitals today sit outside of medical decision-making entirely.
 
-They shows up in:
+They show up in:
 
 - Patient intake and scheduling prioritization
 - Resource allocation (beds, staffing, equipment)
@@ -31,9 +31,9 @@ They shows up in:
 - Operational forecasting and capacity planning
 - Internal knowledge retrieval and documentation workflows
 
-These are not sexy new AI-medicine use cases. They are the the corporate [back-office operations that can be automated](https://semantictechnologyservices.com/), that soak up hospital budget and handle the unglamorous work of making things run.
+These are not sexy new AI-medicine use cases. They are the corporate [back-office operations that can be automated](https://semantictechnologyservices.com/), that soak up hospital budget and handle the unglamorous work of making things run.
 
-In most hospital environments, these predictive tools behave much more like an an RPA layer than an decision-making agent. This means the real risk is not the model itself, but how that automation layer integrates cleanly over non-medical workflows. Too haphazardly, the model can run amock. But too brittle and it offers none of the upside over traditional RPAs of the past.
+In most hospital environments, these predictive tools behave much more like an RPA layer than an decision-making agent. This means the real risk is not the model itself, but how that automation layer integrates cleanly over non-medical workflows. Too haphazardly, the model can run amok. But too brittle and it offers none of the upside over traditional RPAs of the past.
 
 If a biased model is layered overtop of an existing function with no friction, that is a problem. But if the same model is one of several inputs, reviewed, contextualized, and occasionally overridden, the risk profile can be mitigated dramatically.
 
@@ -51,7 +51,7 @@ For technical leadership, that surfaces a few very practical questions:
 
 Critical breakpoints to check in on a model significantly mitigates this risk. By implementing these control points, the model's edge cases can be surfaced and remedied in much quicker fashion than you have with models working within patient-care.
 
-The instinct is to evaluate models: Which one is more accurate? Which one is less biased? But in practice, the bigger gains (and the safer deployments) come from structuring the workflows around those models. AI outputs built around SOPs and workflow diagramms can manage the edge cases in an operational workflow. It is a much safer way to deploy LLMs than in medical-facing roles, where the risk of bias becomes exponential.
+The instinct is to evaluate models: Which one is more accurate? Which one is less biased? But in practice, the bigger gains (and the safer deployments) come from structuring the workflows around those models. AI outputs built around SOPs and workflow diagrams can manage the edge cases in an operational workflow. It is a much safer way to deploy LLMs than in medical-facing roles, where the risk of bias becomes exponential.
 
 ## Why This Matters Now
 

@@ -22,7 +22,7 @@ Copying data from one system into another. Reconciling mismatches. Logging into 
 
 ![Man struggling with paperwork](/images/man-in-paperwork.jpg)
 
-Traditional RPA tools tried to use rules-based, deterministic automations. Software like UiPath tried to solve this by hardcoding interactions at the UI level. In stable environments, they work, but most real enterprise environments are not stable. Old RPA solutions against siloed informations have always had challenges when tested at full complexity and scale.
+Traditional RPA tools tried to use rules-based, deterministic automations. Software like UiPath tried to solve this by hardcoding interactions at the UI level. In stable environments, they work, but most real enterprise environments are not stable. Old RPA solutions against siloed information have always had challenges when tested at full complexity and scale.
 
 Automation ends up being reserved for only the most rigid, predictable processes.
 
@@ -37,11 +37,11 @@ That abstraction layer means workflows no longer depend on a perfectly consisten
 - Handling exception cases that don’t follow strict templates
 - Navigating legacy systems with no API access
 
-These models aren't guaranteed to act perfectly (do humans?). But the models coming out of [Anthropic](https://www.anthropic.com/) and other [bespoke automation firms](https://semantictechnologyservices.com/) arereliably enough to reduce human load in a meaningful way.
+These models aren't guaranteed to act perfectly (do humans?). But the models coming out of [Anthropic](https://www.anthropic.com/) and other [bespoke automation firms](https://semantictechnologyservices.com/) are reliable enough to reduce human load in a meaningful way.
 
 ## Where Enterprises Should Actually Pay Attention
 
-For CTOs, the focus should not be on the novelty of “AI using a desktop.” It should be on how this capability fits into existing operational systems. Where is the drudgery? What are the workflows that someone _must_ do, that noone _wants_ to do?
+For CTOs, the focus should not be on the novelty of “AI using a desktop.” It should be on how this capability fits into existing operational systems. Where is the drudgery? What are the workflows that someone _must_ do, that no one _wants_ to do?
 
 Then there is planning an implementation. A few things tend to matter immediately:
 
@@ -52,4 +52,4 @@ Then there is planning an implementation. A few things tend to matter immediatel
 
 APIs are still the cleanest way to integrate systems. That has not changed. But enterprises do not operate in a world where every system has a clean API. Hiring technical staff that knows the API and documentation, and who can integrate a model for you, is often prohibitively expensive. Desktop models remove those blockers.
 
-It is tempting to view this as “AI replacing back-office workers.” In some cases that is going to be true. But the gain isn't in reducing headcount, it's in having an adaptable system that can simplify bureacratic operations that we _all_ have to deal with, especially in environments where traditional integration was previously impossible.
+It is tempting to view this as “AI replacing back-office workers.” In some cases that is going to be true. But the gain isn't in reducing headcount, it's in having an adaptable system that can simplify bureaucratic operations that we _all_ have to deal with, especially in environments where traditional integration was previously impossible.
