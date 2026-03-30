@@ -9,31 +9,29 @@ category: analytics
 popular: false
 ---
 
-The supply chain crises of the past five years have changed how companies think about risk. COVID-19 closed factories across three continents simultaneously. A container ship wedged in the Suez Canal for six days triggered shortages that took months to unwind. A global semiconductor deficit shut down automotive assembly lines while chips sat in the wrong warehouses for the wrong products. The common thread across all of it was not bad luck. It was information lag.
+With the supply chain crises of the past five years, manufacturers could be forgiven for feeling a bit like a worn-out punching bag. From COVID-19 closing factories, to a container ship wedged in the Suez Canal, a global semiconductor deficit that shut down automotive assembly lines. Now, war in Iran and spiking oil prices. The future looks grim.
 
-Companies were operating supply chains designed for a world where disruptions were local and recoverable. Most organizations had no real-time visibility across their networks. Their forecasting tools were backward-looking. Their contingency plans were built on assumptions that had stopped being true.
+Companies were operating supply chains designed for a world where disruptions were local and recoverable. But the last half-0decade has felt like an endless string a globally disruptive events that even the most powerful enterprises in the world find difficult to plan for.
 
-That is the specific problem AI is now solving, and logistics is where the results are most concrete.
+That is a problem AI now helps solving, and logistics is where the results are most concrete.
 
 ## Why Supply Chain Led the Way on AI
 
-Most enterprise AI deployments start slow, stalling on data quality problems, model interpretability debates, and change management friction. Supply chain and logistics avoided much of that because the environment was already structured to support it.
+Most enterprise AI deployments face a few common challenges: data quality problems, model interpretability, change management friction. Supply chain and logistics avoided much of these stallers because the environments setup were already structured to solve them.
 
-Orders, tracking data, ERP inputs, carrier schedules, customs records: all of it is digitized, timestamped, and transactional. Unlike manufacturing shop floors, where cutting conditions shift by the second and sensor data is noisy, warehouses and freight networks deal in predictable, repeatable operations. Move this pallet. Ship that container. Reorder this SKU. The tasks are defined, the outcomes are measurable, and the volume is relentless.
+Orders, shipment tracking, ERP inputs, carrier schedules, customs records have all been mostly digitized, with timestamps and transaction logs. Unlike manufacturing shop floors, where cutting conditions shift by the second and sensor data is noisy, warehouses and freight networks deal in clearer and more predictable information environments. The tasks are well defined (move a pallet, ship a container, reorder a SKU, etc...) which makes it [ideal territory for machine learning](https://www.imts.com/read/article-details/AI-in-Manufacturing-Logistics-and-Supply-Chains-Part-3/2151/type/Read/1).
 
-That makes it [ideal territory for machine learning](https://www.imts.com/read/article-details/AI-in-Manufacturing-Logistics-and-Supply-Chains-Part-3/2151/type/Read/1) to observe patterns, optimize decisions, and improve over time. Warehouses have been proving this for years. The shift now is that the same capability is moving up the stack, from individual distribution centers to the entire supply network.
+That environment is primed for ML algorithms to observe patterns, optimize decisions, and improve over time. Warehouses have been proving this for years. The shift now is that the same capability is moving up the stack, from individual distribution centers to the entire supply network.
 
-## What the Technology Is Actually Doing
+## What Machine Learning Is Doing
 
-There are three places where AI is producing measurable, replicable results in supply chain right now.
+There are two key places where ML is phelping solve the crisis-driven crises in logistics.
 
-**Demand forecasting.** Traditional forecasting relied on historical averages, seasonal adjustments, and experienced planners reading the room. That approach fails when demand shifts faster than the review cycle. An AI-driven [forecasting system integrated into ERP data](https://www.ibm.com/think/topics/ai-in-manufacturing) can generate daily SKU-level predictions across sales channels, flagging changes before they become stockouts. When a competitor's promotion shifts demand for a product in a specific region, the model sees the signal in sales and order data and adjusts production plans automatically. The result is lower inventory carrying costs and higher service levels, often simultaneously.
-
-**Inventory optimization.** The traditional approach to inventory was static. Reorder points were calculated from average demand and lead time buffers, then left largely unchanged. AI makes this dynamic. A platform with access to real-time data from warehousing, production, and transport systems can evaluate current conditions continuously: what is available, where bottlenecks are forming, which orders are most time-sensitive. It then generates the optimal path for inventory flow rather than waiting for a planner to manually reconcile the situation. Fewer bottlenecks, better labor utilization, and improved on-time delivery are the consistent outputs.
+**Demand forecasting.** Traditional forecasting relied on historical averages, seasonal adjustments, and experienced planners reading the room. That approach fails when demand shifts faster than the review cycle. An AI-driven [forecasting system integrated into ERP data](https://www.ibm.com/think/topics/ai-in-manufacturing) can generate daily SKU-level predictions across sales channels, flagging changes before they become stockouts, and providing lower inventory carrying costs and higher service levels.
 
 **Supply chain scenario modeling.** This is the capability that the disruption events of the last five years made urgent. AI scenario models ingest data from internal systems (ERP, inventory, transport schedules) alongside external signals (weather forecasts, shipping delay data, raw material prices, geopolitical signals) to simulate disruptions before they fully materialize. When a supplier in a high-risk region reports a labor shortage, the model predicts which products will be affected, estimates when delays will reach the final customer, and surfaces alternative sourcing options. Prescriptive suggestions let the procurement team reroute orders and adjust production with minimal disruption. That is a meaningful shift: from reacting to disruptions after they happen, to modeling them in advance and building a playbook.
 
-These three capabilities share a design principle. The AI is not replacing the planner or the logistics manager. It is giving them information they could not otherwise have, at a speed that makes it actionable. The human is still making the final call on strategic sourcing or production adjustments. What changes is the quality of the information in front of them and the time available to act.
+These capabilities share a design principle. The AI is giving logistics managers the information they could not otherwise have, at a speed that makes it actionable. Managers are still making the final call on strategic sourcing or production adjustments, but now there is a generational leap in the quality of the information in front of them and the time available to them to act.
 
 ## The Canadian Track Record
 
@@ -41,7 +39,7 @@ The [National Research Council of Canada's AI for Logistics program](https://nrc
 
 The results from that collaboration tell a specific story about what AI can do when it is tested against actual operational data rather than benchmark datasets.
 
-Working with the City of Calgary, researchers from the NRC and the University of Calgary built AI-driven routing tools using deep learning models trained on real traffic and weather data. Tests showed the system can improve travel time by 14% and vehicle speed by 13% while reducing CO2 emissions by 4%. Those numbers are not hypothetical projections. They reflect performance on observed data from Calgary's actual freight network.
+[Working with the City of Calgary, researchers from the NRC and the University of Calgary built AI-driven routing tools](https://nrc.canada.ca/en/stories/research-road-collaborations-create-ai-driven-planner-truck-routes) using deep learning models trained on real traffic and weather data. Tests showed the system can improve travel time by 14% and vehicle speed by 13% while reducing CO2 emissions by 4%. Those numbers are not hypothetical projections. They reflect performance on observed data from Calgary's actual freight network.
 
 Canada Cartage, one of the country's largest transportation and logistics companies, partnered with the research team to tackle regional network optimization. Their goal was to reduce total travelling distance and the number of vehicles required to serve their routes. The proposed AI solution, trained on Canada Cartage's own industrial data, reduced total distance travelled by about 19% and the number of vehicles needed by 24%.
 
