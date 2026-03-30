@@ -1,6 +1,6 @@
 ---
 title: "AI is Rewriting the Rules of Supply Chain"
-subtitle: "From demand forecasting to disruption modeling, the most battle-tested AI deployments in industry are hiding in plain sight: logistics."
+subtitle: "From demand forecasting to disruption modelling, the most battle-tested AI deployments in industry are hiding in plain sight: logistics."
 image: "/images/techy-freighter.jpg"
 imageAlt: "Aerial view of a logistics warehouse and shipping containers"
 readTime: 8
@@ -11,9 +11,9 @@ popular: false
 
 With the supply chain crises of the past five years, manufacturers could be forgiven for feeling a bit like a worn-out punching bag. From COVID-19 closing factories, to a container ship wedged in the Suez Canal, a global semiconductor deficit that shut down automotive assembly lines. Now, war in Iran and spiking oil prices. The future looks grim.
 
-Companies were operating supply chains designed for a world where disruptions were local and recoverable. But the last half-0decade has felt like an endless string a globally disruptive events that even the most powerful enterprises in the world find difficult to plan for.
+Companies were operating supply chains designed for a world where disruptions were local and recoverable. But the last half-decade has felt like an endless string of globally disruptive events that even the most powerful enterprises in the world find difficult to plan for.
 
-That is a problem AI now helps solving, and logistics is where the results are most concrete.
+That is a problem AI now helping solve, and nowhere but in logistics are the results are most evident.
 
 ## Why Supply Chain Led the Way on AI
 
@@ -25,11 +25,11 @@ That environment is primed for ML algorithms to observe patterns, optimize decis
 
 ## What Machine Learning Is Doing
 
-There are two key places where ML is phelping solve the crisis-driven crises in logistics.
+There are two key places where ML is helping solve the crisis-driven crises in logistics.
 
 **Demand forecasting.** Traditional forecasting relied on historical averages, seasonal adjustments, and experienced planners reading the room. That approach fails when demand shifts faster than the review cycle. An AI-driven [forecasting system integrated into ERP data](https://www.ibm.com/think/topics/ai-in-manufacturing) can generate daily SKU-level predictions across sales channels, flagging changes before they become stockouts, and providing lower inventory carrying costs and higher service levels.
 
-**Supply chain scenario modeling.** This is the capability that the disruption events of the last five years made urgent. AI scenario models ingest data from internal systems (ERP, inventory, transport schedules) alongside external signals (weather forecasts, shipping delay data, raw material prices, geopolitical signals) to simulate disruptions before they fully materialize. When a supplier in a high-risk region reports a labor shortage, the model predicts which products will be affected, estimates when delays will reach the final customer, and surfaces alternative sourcing options. Prescriptive suggestions let the procurement team reroute orders and adjust production with minimal disruption. That is a meaningful shift: from reacting to disruptions after they happen, to modeling them in advance and building a playbook.
+**Supply chain scenario modelling.** This is the capability that the disruption events of the last five years made urgent. AI scenario models ingest data from internal systems (ERP, inventory, transport schedules) alongside external signals (weather forecasts, shipping delay data, raw material prices, geopolitical signals) to simulate disruptions before they fully materialize. When a supplier in a high-risk region reports a labour shortage, the model predicts which products will be affected, estimates when delays will reach the final customer, and surfaces alternative sourcing options. Prescriptive suggestions let the procurement team reroute orders and adjust production with minimal disruption. That is a meaningful shift: from reacting to disruptions after they happen, to modelling them in advance and building a playbook.
 
 These capabilities share a design principle. The AI is giving logistics managers the information they could not otherwise have, at a speed that makes it actionable. Managers are still making the final call on strategic sourcing or production adjustments, but now there is a generational leap in the quality of the information in front of them and the time available to them to act.
 
@@ -71,7 +71,7 @@ Supply chain AI faces three categories of friction that organizations consistent
 
 **Interpretability and trust.** Supply chain decisions can involve millions of dollars of inventory and commitments to major customers. Planners who are told "the model recommends delaying this purchase order" and cannot see why are unlikely to act on that recommendation. The best-designed deployments include explainability features that show planners the signals driving a prediction: which supplier risk flags, which demand indicators, which inventory thresholds tipped the recommendation. That transparency builds the trust that makes the model's outputs actually useful.
 
-**Change management.** Virtually every organization that has deployed AI in supply chain has encountered resistance from planners who see the technology as a threat to their institutional knowledge and their jobs. That resistance is understandable. In most cases, the more honest framing is that AI handles the high-volume, repeatable prediction work that consumed much of the planner's time, freeing them to focus on the judgment calls, the supplier relationships, and the edge cases that models handle poorly. That reframing takes deliberate effort and clear communication to land.
+**Change management.** Virtually every organization that has deployed AI in supply chain has encountered resistance from planners who see the technology as a threat to their institutional knowledge and their jobs. That resistance is understandable. In most cases, the more honest framing is that AI handles the high-volume, repeatable prediction work that consumes much of the planner's time, freeing them to focus on the judgment calls, the supplier relationships, and the edge cases that models handle poorly. That reframing takes deliberate effort and clear communication to land.
 
 IBM has noted that virtually all organizations surveyed expect AI and automation to affect their operations in some significant way. The challenge is not whether the change is coming. It is whether the workforce is being prepared for it.
 
@@ -79,10 +79,10 @@ IBM has noted that virtually all organizations surveyed expect AI and automation
 
 The supply chain disruptions of the past five years have made the case for AI investment at the executive level. The question most organizations are now working through is sequencing: where to start, and how to build from an initial deployment toward a genuinely connected supply network.
 
-The practical entry points are consistent across organizations that have seen early success. Start with forecasting, because the data exists, the baseline is easy to measure, and improvement is easy to demonstrate. Build confidence in the model's outputs before expanding its scope. Move from demand forecasting to inventory optimization once the data infrastructure is in place. Introduce scenario modeling once there is organizational readiness to act on what the model surfaces.
+The practical entry points are consistent across organizations that have seen early success. Start with forecasting, because the data exists, the baseline is easy to measure, and improvement is easy to demonstrate. Build confidence in the model's outputs before expanding its scope. Move from demand forecasting to inventory optimization once the data infrastructure is in place. Introduce scenario modelling once there is organizational readiness to act on what the model surfaces.
 
 The underlying logic is the same one that drives successful AI deployments in any domain. The model's value comes from the system around it. Data pipelines, human-in-the-loop design, clear escalation paths when predictions conflict with planner judgment, and auditability at the decision level. None of that is as interesting as the headline capability. All of it is what makes the headline capability actually work.
 
-Supply chain AI is not a futuristic concept being piloted in research labs. It is running in production at large Canadian freight companies and at health systems, food manufacturers, and automotive assemblers around the world. The organizations that treat it as infrastructure rather than innovation theater are already compounding the gains.
+Supply chain AI is not a futuristic concept being piloted in research labs. It is running in production at large Canadian freight companies and at health systems, food manufacturers, and automotive assemblers around the world. The organizations that treat it as infrastructure rather than innovation theatre are already compounding the gains.
 
 The ones waiting for a cleaner moment to start are compounding the gap instead.
