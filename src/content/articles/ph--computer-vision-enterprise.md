@@ -6,7 +6,6 @@ imageAlt: "Computer vision code on monitors"
 readTime: 5
 date: 2026-07-15
 category: automation
-featured: true
 ---
 
 For most of its history, computer vision lived in research labs and niche industrial settings — quality control on factory floors, satellite image analysis, medical imaging. The idea that it might one day be processing invoices, verifying identity documents, or reading handwritten forms in a mid-sized accounting firm would have seemed far-fetched. It no longer does.

@@ -38,11 +38,19 @@ const categoryLabels: Record<string, string> = {
     </header>
 
     <div class="article-hero">
-      <img src={`${base}${image.replace(/^\//, '')}`} alt={imageAlt ?? title} />
+      <img src={image.startsWith('http') ? image : `${base}${image.replace(/^\//, '')}`} alt={imageAlt ?? title} />
     </div>
 
     <div class="article-body">
       <Content />
+    </div>
+
+    <div class="article-author">
+      <img src={`${base}favicon.svg`} alt="The Knowledge Hub" class="author-icon" />
+      <div class="author-text">
+        <span class="author-name"><span class="author-label">Author: </span>TKH Team</span>
+        <span class="author-org">Semantic Technology Services</span>
+      </div>
     </div>
   </article>
 </BaseLayout>
@@ -187,5 +195,41 @@ const categoryLabels: Record<string, string> = {
   .article-body :global(pre code) {
     background: none;
     padding: 0;
+  }
+
+  .article-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .author-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .author-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .author-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .author-label {
+    color: var(--text-muted);
+  }
+
+  .author-org {
+    font-size: 0.82rem;
+    color: var(--text-muted);
   }
 </style>
