@@ -14,7 +14,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p>We typically respond within two business days.</p>
     </div>
 
-    <form class="contact-form" action="https://formspree.io/f/mlgolpqy" method="POST">
+    <form class="contact-form" id="contact-form" novalidate>
       <input type="hidden" name="_subject" value="TKHub contact form submission" />
 
       <div class="form-row">
@@ -41,7 +41,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <button type="submit" class="form-submit">Send message</button>
     </form>
   </div>
+
+  <div id="toast" class="toast" aria-live="polite"></div>
 </BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const toast = document.getElementById('toast') as HTMLElement;
+
+  function showToast(message: string, type: 'success' | 'error') {
+    toast.textContent = message;
+    toast.className = `toast toast--${type} toast--visible`;
+    setTimeout(() => {
+      toast.className = 'toast';
+    }, 5000);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('https://formspree.io/f/mlgolpqy', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (res.ok) {
+        showToast('Message sent — we\'ll be in touch within two business days.', 'success');
+        form.reset();
+      } else {
+        const data = await res.json();
+        const msg = data?.errors?.map((err: { message: string }) => err.message).join(', ') ?? 'Something went wrong. Please try again.';
+        showToast(msg, 'error');
+      }
+    } catch {
+      showToast('Could not send message. Check your connection and try again.', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send message';
+    }
+  });
+</script>
 
 <style>
   .contact-layout {
@@ -132,6 +176,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .form-submit:hover {
     opacity: 0.85;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: 360px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    opacity: 0;
+    transform: translateY(0.5rem);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  .toast--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .toast--success {
+    border-color: #3a6b4a;
+    color: #a8d5b5;
+  }
+
+  .toast--error {
+    border-color: #6b3a3a;
+    color: #d5a8a8;
   }
 
   @media (max-width: 1024px) {
