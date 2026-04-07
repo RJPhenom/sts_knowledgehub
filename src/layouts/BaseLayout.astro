@@ -3,8 +3,11 @@ import '../styles/global.css';
 
 interface Props {
   title?: string;
+  description?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
-const { title = 'The Knowledge Hub' } = Astro.props;
+const { title = 'The Knowledge Hub', description, ogImage, ogImageAlt } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
@@ -15,6 +18,21 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title} — The Knowledge Hub</title>
+    {description && <meta name="description" content={description} />}
+    {ogImage && (
+      <>
+        <meta property="og:title" content={`${title} — The Knowledge Hub`} />
+        {description && <meta property="og:description" content={description} />}
+        <meta property="og:image" content={ogImage} />
+        {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${title} — The Knowledge Hub`} />
+        {description && <meta name="twitter:description" content={description} />}
+        <meta name="twitter:image" content={ogImage} />
+        {ogImageAlt && <meta name="twitter:image:alt" content={ogImageAlt} />}
+      </>
+    )}
     <!-- Cloudflare Web Analytics -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "07bf9bdd99a8445a806a14b14f566b20"}'></script>
     <!-- End Cloudflare Web Analytics -->
